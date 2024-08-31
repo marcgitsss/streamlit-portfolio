@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import pandas as pd
 import streamlit as st
 from PIL import Image
 
@@ -7,7 +7,6 @@ from PIL import Image
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
-# resume_file = current_dir / "assets" / "CV.pdf"
 profile_pic = current_dir / "assets" / "profile.jpg"
 
 
@@ -71,10 +70,9 @@ with col2:
     """, unsafe_allow_html=True)
 
 
-# Social Links
 st.write('\n')
 
-tab1, tab2, tab3 = st.tabs(["About Me", "My Passion", "My Preferences"])
+tab1, tab2, tab3, tab4 = st.tabs(["About Me", "My Passion", "My Preferences", "Cool Places"])
     
 with tab1:
   st.markdown(
@@ -92,9 +90,6 @@ with tab1:
   )
 
 with tab2:
-  # add the main heading My Hobbies
-  # add a sub-heading text here "Riding Motorbike"
-  # st.image('./assets/image.png', width=320)
   st.markdown(
     """
     <h2 class="section-heading">My Hobbies</h2>
@@ -134,3 +129,38 @@ with tab3:
   """,
   unsafe_allow_html=True
 )
+
+with tab4:
+  st.markdown(
+    """
+    <h2 class="section-heading">Places I've Been To</h2>
+    """,
+    unsafe_allow_html=True
+  )
+  # Define the latitude and longitude for the locations
+  locations = {
+      'Bantayan Island': {'latitude': 11.1999, 'longitude': 123.7406},
+      'Boracay': {'latitude': 11.9674, 'longitude': 121.9248},
+      'Moalboal': {'latitude': 9.9557, 'longitude': 123.4008}
+  }
+
+  # Create a DataFrame with the locations
+  data = pd.DataFrame(locations).T.reset_index()
+  data.columns = ['Place', 'latitude', 'longitude']
+
+
+  # Display the map with the USC Talamban location
+  st.map(data)
+
+  st.markdown(
+  """
+   <div class="container">
+        <ul class="list">
+            <li class="list-item">Bantayan Island</li>
+            <li class="list-item">Boracay</li>
+            <li class="list-item">Moalboal</li>
+        </ul>
+    </div>
+  """,
+  unsafe_allow_html=True
+  )
