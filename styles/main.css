@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+
+* {
+  font-family: 'Readex Pro';
+}
+
+a {
+  text-decoration: none;
+  color: white !important;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #d33682 !important;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 5%;
+}
+
+#MainMenu {
+  visibility: hidden;
+}
+
+footer {
+  visibility: hidden;
+}
+
+header {
+  visibility: hidden;
+}
+
+.name {
+  padding-top: 0;
+  margin-top: -15px;
+}
+
+.social-links {
+  margin-bottom: 5px;
+}
+
+/* hobbies start */
+
+.container {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a; /* Dark background for the container */
+  color: #e0e0e0; /* Light text color for readability */
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for depth effect */
+}
+
+.section-heading {
+  color: #66fcf1; /* Light teal color for headings */
+  margin-bottom: 10px;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-item {
+  background: #333; /* Darker background for list items */
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: #e0e0e0; /* Light text color for list items */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.list-item:hover {
+  background-color: #66fcf1; /* Light teal hover color */
+  color: #1a1a1a; /* Dark text color on hover */
+}
